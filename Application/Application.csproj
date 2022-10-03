@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.6" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.5" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Features\" />
+    <None Remove="Shared\" />
+    <None Remove="Shared\AutofacModules\" />
+    <None Remove="Features\GetPetsByName\" />
+    <None Remove="Features\GetPetsByName\DTO\" />
+    <None Remove="Features\GetPetsByName\Interfaces\" />
+    <None Remove="Features\GetPetsByName\Models\" />
+    <None Remove="Features\GetPetsByName\Repositories\" />
+    <None Remove="Features\GetPetsByName\UseCase\" />
+    <None Remove="Dapper" />
+    <None Remove="MediatR" />
+    <None Remove="Polly" />
+    <None Remove="System.Data.SqlClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Shared\AutofacModules\" />
+    <Folder Include="Shared\Configuration\" />
+    <Folder Include="Shared\Constants\" />
+    <Folder Include="Shared\DTO\" />
+    <Folder Include="Shared\Domain\" />
+    <Folder Include="Shared\Enums\" />
+    <Folder Include="Shared\ExternalServices\" />
+    <Folder Include="Shared\Filters\" />
+    <Folder Include="Shared\Helpers\" />
+    <Folder Include="Shared\Middlewares\" />
+    <Folder Include="Shared\Models\" />
+    <Folder Include="Shared\Queries\" />
+    <Folder Include="Shared\Repositories\" />
+    <Folder Include="Shared\Services\" />
+    <Folder Include="Shared\Results\" />
+    <Folder Include="Shared\ValueObjects\" />
+    <Folder Include="Features\GetPetsByName\" />
+    <Folder Include="Features\GetPetsByName\DTO\" />
+    <Folder Include="Features\GetPetsByName\Interfaces\" />
+    <Folder Include="Features\GetPetsByName\Models\" />
+    <Folder Include="Features\GetPetsByName\Repositories\" />
+    <Folder Include="Features\GetPetsByName\UseCase\" />
+  </ItemGroup>
+</Project>
