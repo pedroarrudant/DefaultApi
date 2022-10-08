@@ -36,6 +36,7 @@
     <None Remove="MediatR" />
     <None Remove="Polly" />
     <None Remove="System.Data.SqlClient" />
+    <None Remove="Shared\Queries\SELECT_PET.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -62,5 +63,15 @@
     <Folder Include="Features\GetPetsByName\Models\" />
     <Folder Include="Features\GetPetsByName\Repositories\" />
     <Folder Include="Features\GetPetsByName\UseCase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Shared\Queries\SELECT_PET.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\Queries\SELECT_PET.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

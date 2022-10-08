@@ -20,7 +20,8 @@ builder.Services.AddCustomSwagger();
 builder.Services.AddCustomConfiguration(builder.Configuration);
 builder.Services.AddHttpClientServices();
 builder.Services.AddAutofac();
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly(), Assembly.Load(new AssemblyName("Application")));
+builder.Services.AddRabbitMqServices(builder.Configuration);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ModuleApplication()));

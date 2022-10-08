@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Application.Shared.Configuration;
 using Autofac;
 
 namespace Application.Shared.AutofacModules

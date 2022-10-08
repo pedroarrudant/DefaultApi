@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
+using Application.Features.GetPetsByName.Repositories;
+using Application.Shared.Configuration;
 using Autofac;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Application.Shared.AutofacModules
 {
@@ -9,13 +14,13 @@ namespace Application.Shared.AutofacModules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //_ = builder.Register(container =>
-            //{
-            //    var dataBaseOptions = container.Resolve<IOptionsSnapshot<DatabaseOptions>>();
-            //    var logger = container.Resolve<ILogger<Repository>>();
+            _ = builder.Register(container =>
+            {
+                var dataBaseOptions = container.Resolve<IOptionsSnapshot<DatabaseOptions>>();
+                var logger = container.Resolve<ILogger<PetsRepository>>();
 
-            //    return new GetPetsByNameRepository(dataBaseOptions.Connection, logger);
-            //}).As<IGetPetsByNameRepository>();
+                return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);
+            }).As<IPetsRepository>();
         }
     }
 }
