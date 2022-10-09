@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 
 namespace Application.Entrypoint.Observer
 {
+    [ExcludeFromCodeCoverage]
     public class ReceiveObserver : IReceiveObserver
     {
         private readonly ILogger<ReceiveObserver> _logger;
@@ -15,31 +17,31 @@ namespace Application.Entrypoint.Observer
 
         public async Task ConsumeFault<T>(ConsumeContext<T> context, TimeSpan duration, string consumerType, Exception exception) where T : class
         {
-            System.Diagnostics.Debug.WriteLine($"Mensagem do tipo {context.Message.GetType().Name} enviada com erro {exception.Message} do consumer.");
+            _logger.LogInformation($"[RabbitMQ - Observer] Mensagem do tipo {context.Message.GetType().Name} enviada com erro {exception.Message} do consumer.");
         }
 
         public async Task PostConsume<T>(ConsumeContext<T> context, TimeSpan duration, string consumerType) where T : class
         {
-            System.Diagnostics.Debug.WriteLine($"Mensagem do tipo {context.Message.GetType().Name} id {context.MessageId} consumida.");
+            _logger.LogInformation($"[RabbitMQ - Observer] Mensagem do tipo {context.Message.GetType().Name} id {context.MessageId} consumida.");
         }
 
         public async Task PostReceive(ReceiveContext context)
         {
-            System.Diagnostics.Debug.WriteLine($"Mensagem {context.GetMessageId()} recebida.");
+            _logger.LogInformation($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} recebida.");
         }
 
         public async Task PreReceive(ReceiveContext context)
         {
-            System.Diagnostics.Debug.WriteLine($"Mensagem {context.GetMessageId()} consumida.");
+            _logger.LogInformation($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} consumida.");
         }
 
         public async Task ReceiveFault(ReceiveContext context, Exception exception)
         {
             if (context.Redelivered)
             {
-                System.Diagnostics.Debug.WriteLine($"Mensagem {context.GetMessageId()} reenviada.");
+                _logger.LogInformation($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} reenviada.");
             }
-            System.Diagnostics.Debug.WriteLine($"Mensagem {context.GetMessageId()} enviada porém foi dada excessao {exception.Message} no consumer.");
+            _logger.LogError($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} enviada porém foi dada excessao {exception.Message} no consumer.");
         }
     }
 }

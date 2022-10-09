@@ -91,19 +91,20 @@ namespace DefaultAPI.Extensions
             {
                 services.AddMassTransit(x =>
                 {
-                    //x.AddConsumer<ConsumerClass>();
+                    x.AddConsumer<InsertPetConsumer>();
+
                     x.UsingRabbitMq((context, cfg) =>
                     {
-                        cfg.Host(new Uri(String.Format(Uri, server, port, vHost)), h =>
+                        cfg.Host(new Uri("amqp://localhost:5672"), h =>
                         {
                             h.Username(user);
                             h.Password(password);
                         });
 
-                        //cfg.ReceiveEndpoint("insertPet:queue", e =>
-                        //{
-                        //    e.Consumer<InsertPetConsumer>(context);
-                        //});
+                        cfg.ReceiveEndpoint("insertPetQueue", e =>
+                        {
+                            e.ConfigureConsumer<InsertPetConsumer>(context);
+                        });
                     });
                 });
             }
