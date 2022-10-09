@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
-using Application.Features.GetPetsByName.Repositories;
+using Application.Entrypoint.Observer;
 using Application.Shared.Configuration;
+using Application.Shared.Repositories;
 using Autofac;
+using MassTransit;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -21,6 +23,13 @@ namespace Application.Shared.AutofacModules
 
                 return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);
             }).As<IPetsRepository>();
+
+            _ = builder.Register(container =>
+            {
+                var logger = container.Resolve<ILogger<ReceiveObserver>>();
+
+                return new ReceiveObserver(logger);
+            }).As<IReceiveObserver>();
         }
     }
 }

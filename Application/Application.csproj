@@ -37,6 +37,11 @@
     <None Remove="Polly" />
     <None Remove="System.Data.SqlClient" />
     <None Remove="Shared\Queries\SELECT_PET.sql" />
+    <None Remove="Features\InsertPet\Repositories\" />
+    <None Remove="Entrypoint\" />
+    <None Remove="Entrypoint\Consumer\" />
+    <None Remove="Shared\Queries\SELECT_PET %28copiar%29.sql" />
+    <None Remove="Entrypoint\Observer\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -63,6 +68,10 @@
     <Folder Include="Features\GetPetsByName\Models\" />
     <Folder Include="Features\GetPetsByName\Repositories\" />
     <Folder Include="Features\GetPetsByName\UseCase\" />
+    <Folder Include="Features\InsertPet\Repositories\" />
+    <Folder Include="Entrypoint\" />
+    <Folder Include="Entrypoint\Consumer\" />
+    <Folder Include="Entrypoint\Observer\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Shared\Queries\SELECT_PET.sql">
@@ -71,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Shared\Queries\SELECT_PET.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\Queries\INSERT_PET.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

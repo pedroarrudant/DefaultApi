@@ -1,6 +1,5 @@
-﻿using System;
-using Application.Features.GetPetsByName.Models;
-using Application.Features.GetPetsByName.Repositories;
+﻿using Application.Features.GetPetsByName.Models;
+using Application.Shared.Repositories;
 using MediatR;
 
 namespace Application.Features.GetPetsByName.UseCase
@@ -13,6 +12,7 @@ namespace Application.Features.GetPetsByName.UseCase
         {
             _repository = repository;
         }
+
         public async Task<GetPetsByNameOutput> Handle(GetPetsByNameInput request, CancellationToken cancellationToken)
         {
             var result = await _repository.GetPetByNameAsync(request.Name, cancellationToken);

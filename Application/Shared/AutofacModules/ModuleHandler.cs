@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Application.Features.GetPetsByName.UseCase;
+using Application.Features.InsertPet.UseCase;
 using Application.Shared.Middlewares;
 using Autofac;
 using MediatR;
@@ -17,6 +18,8 @@ namespace Application.Shared.AutofacModules
             builder.RegisterGeneric(typeof(ExceptionHandler<>)).As(typeof(IRequestExceptionAction<,>));
 
             builder.RegisterAssemblyTypes(typeof(GetPetsByNameUseCaseHandler).GetTypeInfo().Assembly).AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(InsertPetUseCaseHandler).GetTypeInfo().Assembly).AsClosedTypesOf(typeof(IRequestHandler<,>));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using Application.Entrypoint.Consumer;
 using Application.Shared.Configuration;
 using MassTransit;
 using MassTransit.Metadata;
@@ -61,48 +62,51 @@ namespace DefaultAPI.Extensions
 
         public static IServiceCollection AddRabbitMqServices(this IServiceCollection services, IConfiguration configuration)
         {
-            //var types = AssemblyTypeCache.FindTypes(new[] { Assembly.Load(new AssemblyName("Application")) },
-            //                                                TypeMetadataCache.HasConsumerInterfaces).GetAwaiter().GetResult();
+            var types = AssemblyTypeCache.FindTypes(new[] { Assembly.Load(new AssemblyName("Application")) },
+                                                            TypeMetadataCache.HasConsumerInterfaces).GetAwaiter().GetResult();
 
-            //var consumers = types.FindTypes(TypeClassification.Concrete | TypeClassification.Closed).ToList();
+            var consumers = types.FindTypes(TypeClassification.Concrete | TypeClassification.Closed).ToList();
 
-            //var useInMemory = configuration.GetValue<bool>("RabbitMQ:UseInMemory");
-            //var port = configuration.GetValue<string>("RabbitMQ:Port");
-            //var server = configuration.GetValue<string>("RabbitMQ:Server");
-            //var vHost = configuration.GetValue<string>("RabbitMQ:VHost");
-            //var Uri = configuration.GetValue<string>("RabbitMQ:URI");
-            //var user = configuration.GetValue<string>("RabbitMQ:User");
-            //var password = configuration.GetValue<string>("RabbitMQ:Password");
+            var useInMemory = configuration.GetValue<bool>("RabbitMQ:UseInMemory");
+            var port = configuration.GetValue<string>("RabbitMQ:Port");
+            var server = configuration.GetValue<string>("RabbitMQ:Server");
+            var vHost = configuration.GetValue<string>("RabbitMQ:VHost");
+            var Uri = configuration.GetValue<string>("RabbitMQ:URI");
+            var user = configuration.GetValue<string>("RabbitMQ:User");
+            var password = configuration.GetValue<string>("RabbitMQ:Password");
 
-            //if (useInMemory)
-            //{
-            //    services.AddMassTransit(x =>
-            //    {
-            //        x.AddConsumers(consumers.ToArray());
-            //        x.UsingInMemory((context, cfg) =>
-            //        {
-            //            //cfg.TransportCurrencyLimit = 10;
-            //            cfg.ConfigureEndpoints(context);
-            //        });
-            //    });
-            //}
-            //else
-            //{
-            //    services.AddMassTransit(x => {
-            //        //x.AddConsumer<ConsumerClass>();
-            //        x.UsingRabbitMq((context, cfg) => {
-            //            cfg.Host(new Uri(String.Format(Uri, server, port, vHost)), h =>
-            //            {
-            //                h.Username(user);
-            //                h.Password(password);
-            //            });
+            if (useInMemory)
+            {
+                services.AddMassTransit(x =>
+                {
+                    x.AddConsumers(consumers.ToArray());
+                    x.UsingInMemory((context, cfg) =>
+                    {
+                        //cfg.TransportCurrencyLimit = 10;
+                        cfg.ConfigureEndpoints(context);
+                    });
+                });
+            }
+            else
+            {
+                services.AddMassTransit(x =>
+                {
+                    //x.AddConsumer<ConsumerClass>();
+                    x.UsingRabbitMq((context, cfg) =>
+                    {
+                        cfg.Host(new Uri(String.Format(Uri, server, port, vHost)), h =>
+                        {
+                            h.Username(user);
+                            h.Password(password);
+                        });
 
-            //            //cfg.ReceiveEndpoint("queuename:queue", e => {
-            //            //    e.Consumer<ClasseConsumer>(context);
-            //            //});
-            //        });
-            //    });
-            //}
+                        //cfg.ReceiveEndpoint("insertPet:queue", e =>
+                        //{
+                        //    e.Consumer<InsertPetConsumer>(context);
+                        //});
+                    });
+                });
+            }
 
             return services;
         }
