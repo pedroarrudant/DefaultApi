@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using Application.Entrypoint.Observer;
 using Application.Shared.Configuration;
 using Application.Shared.Repositories;
+using Application.Shared.Services;
 using Autofac;
 using MassTransit;
 using Microsoft.Extensions.Logging;
@@ -27,8 +28,9 @@ namespace Application.Shared.AutofacModules
             _ = builder.Register(container =>
             {
                 var logger = container.Resolve<ILogger<ReceiveObserver>>();
+                var publish = container.Resolve<PublishService>();
 
-                return new ReceiveObserver(logger);
+                return new ReceiveObserver(logger, publish);
             }).As<IReceiveObserver>();
         }
     }

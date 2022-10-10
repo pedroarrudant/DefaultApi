@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Application.Entrypoint.Consumer;
+using Application.Entrypoint.DeadLetter;
 using Application.Shared.Configuration;
 using MassTransit;
 using MassTransit.Metadata;
@@ -92,7 +93,8 @@ namespace DefaultAPI.Extensions
                 services.AddMassTransit(x =>
                 {
                     x.AddConsumer<InsertPetConsumer>();
-
+                    //x.AddConsumer<PetDeadLetterConsumer>();
+                    
                     x.UsingRabbitMq((context, cfg) =>
                     {
                         cfg.Host(new Uri("amqp://localhost:5672"), h =>
@@ -104,7 +106,23 @@ namespace DefaultAPI.Extensions
                         cfg.ReceiveEndpoint("insertPetQueue", e =>
                         {
                             e.ConfigureConsumer<InsertPetConsumer>(context);
+
+                            e.UseRetry(r => r.Immediate(3));
+
+                            e.ConfigureConsumeTopology = false;
+
+                            e.BindDeadLetterQueue("deadletter-exchange", "deadletter-queue", cfg =>
+                            {
+                                //cfg.SetExchangeArgument("x-message-ttl", TimeSpan.FromSeconds(60));
+                                cfg.Durable = true;
+                            });
                         });
+
+                        //Caso queira pode ser adicionado um consumer para tratar a DLQ
+                        //cfg.ReceiveEndpoint("deadletter-queue", e =>
+                        //{
+                        //    e.ConfigureConsumer<PetDeadLetterConsumer>(context);
+                        //});
                     });
                 });
             }

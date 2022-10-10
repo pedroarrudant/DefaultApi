@@ -16,7 +16,15 @@ namespace Application.Entrypoint.Consumer
 
         public async Task Consume(ConsumeContext<Pet> context)
         {
-            await _repository.InsertPetAsync(context.Message, new CancellationToken());
+            if (context.Message.IsValid())
+            {
+
+                await _repository.InsertPetAsync(context.Message, new CancellationToken());
+            }
+            else
+            {
+                throw new ArgumentException("Preenchimento dos dados do Pet estao feitos de forma incorreta.");
+            }
         }
     }
 }

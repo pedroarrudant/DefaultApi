@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Application.Shared.Models;
+using Application.Shared.Services;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 
@@ -9,10 +11,12 @@ namespace Application.Entrypoint.Observer
     public class ReceiveObserver : IReceiveObserver
     {
         private readonly ILogger<ReceiveObserver> _logger;
+        private readonly IPublisherService _publish;
 
-        public ReceiveObserver(ILogger<ReceiveObserver> logger)
+        public ReceiveObserver(ILogger<ReceiveObserver> logger, IPublisherService publish)
         {
             _logger = logger;
+            _publish = publish;
         }
 
         public async Task ConsumeFault<T>(ConsumeContext<T> context, TimeSpan duration, string consumerType, Exception exception) where T : class
@@ -41,7 +45,8 @@ namespace Application.Entrypoint.Observer
             {
                 _logger.LogInformation($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} reenviada.");
             }
-            _logger.LogError($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} enviada porém foi dada excessao {exception.Message} no consumer.");
+
+            _logger.LogError($"[RabbitMQ - Observer] Mensagem {context.GetMessageId()} enviada porem foi dada exception {exception.Message} no consumer.");
         }
     }
 }

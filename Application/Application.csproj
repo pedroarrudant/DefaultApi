@@ -42,6 +42,7 @@
     <None Remove="Entrypoint\Consumer\" />
     <None Remove="Shared\Queries\SELECT_PET %28copiar%29.sql" />
     <None Remove="Entrypoint\Observer\" />
+    <None Remove="Entrypoint\DeadLetter\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -72,6 +73,7 @@
     <Folder Include="Entrypoint\" />
     <Folder Include="Entrypoint\Consumer\" />
     <Folder Include="Entrypoint\Observer\" />
+    <Folder Include="Entrypoint\DeadLetter\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Shared\Queries\SELECT_PET.sql">
