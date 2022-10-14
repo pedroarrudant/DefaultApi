@@ -16,7 +16,7 @@ public class GetPetsByNameUseCaseHandlerTests
     }
 
     [Fact]
-    public async void GetPetsByNameShouldPass()
+    public async Task GetPetsByNameShouldPass()
     {
         //Arrange
         _repository.Setup(m => m.GetPetByNameAsync(It.IsAny<string>(), new CancellationToken())).ReturnsAsync(PetStatic.Create());
