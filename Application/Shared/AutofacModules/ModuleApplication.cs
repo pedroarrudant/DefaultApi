@@ -1,5 +1,5 @@
-﻿using System;
-using System.Data.SqlClient;
+using System;
+using Microsoft.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using Application.Entrypoint.Observer;
 using Application.Shared.Configuration;
@@ -22,7 +22,14 @@ namespace Application.Shared.AutofacModules
                 var dataBaseOptions = container.Resolve<IOptionsSnapshot<DatabaseOptions>>();
                 var logger = container.Resolve<ILogger<PetsRepository>>();
 
-                return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);
+                var connectionString = new SqlConnectionStringBuilder(dataBaseOptions.Value.ConnectionString);
+                // Preserve the previous provider default when Encrypt is omitted.
+                if (!connectionString.ShouldSerialize("Encrypt"))
+                {
+                    connectionString.Encrypt = SqlConnectionEncryptOption.Optional;
+                }
+
+                return new PetsRepository(new SqlConnection(connectionString.ConnectionString), logger);
             }).As<IPetsRepository>();
 
             _ = builder.Register(container =>

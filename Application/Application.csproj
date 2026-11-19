@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -19,7 +19,7 @@
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="Polly" Version="7.2.3" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,7 +35,7 @@
     <None Remove="Dapper" />
     <None Remove="MediatR" />
     <None Remove="Polly" />
-    <None Remove="System.Data.SqlClient" />
+    <None Remove="Microsoft.Data.SqlClient" />
     <None Remove="Shared\Queries\SELECT_PET.sql" />
     <None Remove="Features\InsertPet\Repositories\" />
     <None Remove="Entrypoint\" />
