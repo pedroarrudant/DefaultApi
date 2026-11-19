@@ -1,0 +1,1023 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-11-19T15:30:24.3845745Z",
+  "analysisEndTime": "2026-11-19T15:30:25.5956823Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 3,
+      "issues": 7,
+      "incidents": 30,
+      "effort": 30
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 12,
+        "Optional": 2,
+        "Potential": 16,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 6,
+        "Project": 3,
+        "Api": 21
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "Application\\Application.csproj",
+      "startingProject": true,
+      "issues": 4,
+      "storyPoints": 14,
+      "properties": {
+        "appName": "Application",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "isTestProject": false,
+        "numberOfFiles": 27,
+        "numberOfCodeFiles": 25,
+        "linesTotal": 638,
+        "linesOfCode": 636,
+        "totalApiScanned": 583,
+        "minLinesOfCodeToChange": 10,
+        "maxLinesOfCodeToChange": 10
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "5666a0a7-f319-49f5-bcde-348f309f5802",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+              "protected": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15"
+            },
+            "kind": "File",
+            "path": "Application\\Application.csproj",
+            "snippet": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+            "label": "Microsoft.Extensions.Logging 6.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Logging",
+              "PackageVersion": "6.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "8cc07a66-b945-4704-a2a1-5d3b20e82700",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+              "protected": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4"
+            },
+            "kind": "File",
+            "path": "Application\\Application.csproj",
+            "snippet": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "protectedSnippet": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "label": "Newtonsoft.Json 13.0.1",
+            "properties": {
+              "PackageId": "Newtonsoft.Json",
+              "PackageVersion": "13.0.1",
+              "PackageNewVersion": "13.0.4",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "97c3a6e2-bead-444d-8d95-58fcc39343e0",
+          "ruleId": "NuGet.0004",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Data.SqlClient, 4.8.3\n\nRecommendation:\n\nSystem.Data.SqlClient, 4.9.1",
+              "protected": "System.Data.SqlClient, 4.8.3\n\nRecommendation:\n\nSystem.Data.SqlClient, 4.9.1"
+            },
+            "kind": "File",
+            "path": "Application\\Application.csproj",
+            "snippet": "System.Data.SqlClient, 4.8.3\n\nRecommendation:\n\nSystem.Data.SqlClient, 4.9.1",
+            "protectedSnippet": "System.Data.SqlClient, 4.8.3\n\nRecommendation:\n\nSystem.Data.SqlClient, 4.9.1",
+            "label": "System.Data.SqlClient 4.8.3",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageVersion": "4.8.3",
+              "PackageNewVersion": "4.9.1",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "1195320c-c51c-40e9-aae9-d68b3c315c60",
+          "ruleId": "Project.0002",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "Application\\Application.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "b73429f6-69ce-4e3b-9620-662f9f8d7baf",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\AutofacModules\\ModuleApplication.cs",
+            "snippet": "return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "1251"
+            },
+            "line": 24,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "59865ee9-1144-4a69-ba68-61b70c0f1b9a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);",
+              "protected": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\AutofacModules\\ModuleApplication.cs",
+            "snippet": "return new PetsRepository(new SqlConnection(dataBaseOptions.Value.ConnectionString), logger);",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)",
+            "label": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "1251"
+            },
+            "line": 24,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "92364ad5-4b93-45e9-8f9f-ef6a39c450fa",
+          "ruleId": "Api.0002",
+          "description": "Breaking change: New TimeSpan.From*() overloads that take integers ",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "M:System.TimeSpan.FromSeconds(System.Double)"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "label": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "properties": {
+              "CharCount": "2912"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/core-libraries/9.0/timespan-from-overloads.md",
+                "isCustom": false
+              }
+            ],
+            "line": 59,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "bbd7eff8-aac1-43ca-b5c2-b26d06664e81",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "T:System.Data.SqlClient.SqlException"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlException",
+            "label": "T:System.Data.SqlClient.SqlException",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "2912"
+            },
+            "line": 59,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a489c620-502f-4d60-b903-9666212abe8d",
+          "ruleId": "Api.0002",
+          "description": "Breaking change: New TimeSpan.From*() overloads that take integers ",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "M:System.TimeSpan.FromSeconds(System.Double)"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "label": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "properties": {
+              "CharCount": "2912"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/core-libraries/9.0/timespan-from-overloads.md",
+                "isCustom": false
+              }
+            ],
+            "line": 47,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0952f9bb-0897-4ece-b23c-a12ab5efb1ec",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "T:System.Data.SqlClient.SqlException"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlException",
+            "label": "T:System.Data.SqlClient.SqlException",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "2912"
+            },
+            "line": 47,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5c872bed-952b-48f9-946f-a1bb449fa786",
+          "ruleId": "Api.0002",
+          "description": "Breaking change: New TimeSpan.From*() overloads that take integers ",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "M:System.TimeSpan.FromSeconds(System.Double)"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "label": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "properties": {
+              "CharCount": "2912"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/core-libraries/9.0/timespan-from-overloads.md",
+                "isCustom": false
+              }
+            ],
+            "line": 35,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "7ff5ad36-836a-4b6c-8d9e-0cfffdc80c69",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "T:System.Data.SqlClient.SqlException"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlException",
+            "label": "T:System.Data.SqlClient.SqlException",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "2912"
+            },
+            "line": 35,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "49e76931-e19e-4687-a0a6-3d64ddef1fda",
+          "ruleId": "Api.0002",
+          "description": "Breaking change: New TimeSpan.From*() overloads that take integers ",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "M:System.TimeSpan.FromSeconds(System.Double)"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "label": "M:System.TimeSpan.FromSeconds(System.Double)",
+            "properties": {
+              "CharCount": "2912"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/core-libraries/9.0/timespan-from-overloads.md",
+                "isCustom": false
+              }
+            ],
+            "line": 23,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "18144032-a59f-4d36-85db-418d153c5247",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "Application\\Application.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+              "protected": "T:System.Data.SqlClient.SqlException"
+            },
+            "kind": "File",
+            "path": "Application\\Shared\\Repositories\\BaseSqlRepository.cs",
+            "snippet": "RetryPolicy retryPolicy = Policy.Handle\u003CSqlException\u003E()\n                .WaitAndRetry(retries, retryAttempt =\u003E TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlException",
+            "label": "T:System.Data.SqlClient.SqlException",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6",
+              "CharCount": "2912"
+            },
+            "line": 23,
+            "column": 12
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "DefaultAPI\\DefaultAPI.csproj",
+      "startingProject": true,
+      "issues": 4,
+      "storyPoints": 14,
+      "properties": {
+        "appName": "DefaultAPI",
+        "projectKind": "AspNetCore",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "isTestProject": false,
+        "numberOfFiles": 5,
+        "numberOfCodeFiles": 3,
+        "linesTotal": 255,
+        "linesOfCode": 224,
+        "totalApiScanned": 317,
+        "minLinesOfCodeToChange": 11,
+        "maxLinesOfCodeToChange": 11
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "3b83ce87-faef-4e98-8c8e-d71ad1760c9d",
+          "ruleId": "NuGet.0002",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+              "protected": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\DefaultAPI.csproj",
+            "snippet": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+            "protectedSnippet": "Microsoft.Extensions.Logging, 6.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 10.0.15",
+            "label": "Microsoft.Extensions.Logging 6.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Logging",
+              "PackageVersion": "6.0.0",
+              "PackageNewVersion": "10.0.15",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "cc79ddf7-d7c2-4e47-ba7b-71b83add84f2",
+          "ruleId": "NuGet.0002",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+              "protected": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\DefaultAPI.csproj",
+            "snippet": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "protectedSnippet": "Newtonsoft.Json, 13.0.1\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "label": "Newtonsoft.Json 13.0.1",
+            "properties": {
+              "PackageId": "Newtonsoft.Json",
+              "PackageVersion": "13.0.1",
+              "PackageNewVersion": "13.0.4",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "e63e8f1b-d4a2-471f-b408-cbc52f333b45",
+          "ruleId": "Project.0002",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\DefaultAPI.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "0e6376f4-1136-4245-832d-2a0f7bab9f2c",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cfg.Host(new Uri(\u0022amqp://localhost:5672\u0022), h =\u003E\n                        {\n                            h.Username(user);\n                            h.Password(password);\n                        });",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "cfg.Host(new Uri(\u0022amqp://localhost:5672\u0022), h =\u003E\n                        {\n                            h.Username(user);\n                            h.Password(password);\n                        });",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 99,
+            "column": 24
+          }
+        },
+        {
+          "incidentId": "42bed3c6-9e06-4eaa-85ae-bce86149567c",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cfg.Host(new Uri(\u0022amqp://localhost:5672\u0022), h =\u003E\n                        {\n                            h.Username(user);\n                            h.Password(password);\n                        });",
+              "protected": "M:System.Uri.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "cfg.Host(new Uri(\u0022amqp://localhost:5672\u0022), h =\u003E\n                        {\n                            h.Username(user);\n                            h.Password(password);\n                        });",
+            "protectedSnippet": "M:System.Uri.#ctor(System.String)",
+            "label": "M:System.Uri.#ctor(System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 99,
+            "column": 24
+          }
+        },
+        {
+          "incidentId": "575252ce-1771-4e1b-bf2e-1aba98d86b82",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var password = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Password\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var password = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Password\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 76,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "be0d3378-fb1f-43fc-861a-5d95ff866ca1",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var user = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:User\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var user = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:User\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 75,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6e9e0437-63d7-4560-a8a7-041e95efac02",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var Uri = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:URI\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var Uri = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:URI\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ba29938e-c3b9-4025-991f-3a93ec9bfa66",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var vHost = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:VHost\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var vHost = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:VHost\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 73,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "357ea9dd-73ff-485e-b4dc-360099b540ea",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var server = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Server\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var server = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Server\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 72,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a53a5ada-194b-4249-98f3-48548ea834af",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var port = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Port\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var port = configuration.GetValue\u003Cstring\u003E(\u0022RabbitMQ:Port\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 71,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e618642e-a682-4fc4-9939-0eeb152b6a25",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var useInMemory = configuration.GetValue\u003Cbool\u003E(\u0022RabbitMQ:UseInMemory\u0022);",
+              "protected": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "var useInMemory = configuration.GetValue\u003Cbool\u003E(\u0022RabbitMQ:UseInMemory\u0022);",
+            "protectedSnippet": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "label": "M:Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue\u0060\u00601(Microsoft.Extensions.Configuration.IConfiguration,System.String)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 70,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "010a5782-1ffd-4b10-888f-fbb307e8a3cd",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.Configure\u003CDatabaseOptions\u003E(configuration.GetSection(\u0022SqlServer\u0022));",
+              "protected": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "services.Configure\u003CDatabaseOptions\u003E(configuration.GetSection(\u0022SqlServer\u0022));",
+            "protectedSnippet": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "label": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 58,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f2edf8cb-1278-4986-b1a6-daf3a144b491",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "DefaultAPI\\DefaultAPI.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.Configure\u003CExternalApiOptions\u003E(configuration.GetSection(\u0022ExternalApis\u0022));",
+              "protected": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)"
+            },
+            "kind": "File",
+            "path": "DefaultAPI\\Extensions\\CustomStartupExtension.cs",
+            "snippet": "services.Configure\u003CExternalApiOptions\u003E(configuration.GetSection(\u0022ExternalApis\u0022));",
+            "protectedSnippet": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "label": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "properties": {
+              "CharCount": "5333"
+            },
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 57,
+            "column": 12
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "DefaultAPITests\\DefaultAPITests.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 2,
+      "properties": {
+        "appName": "DefaultAPITests",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "isTestProject": true,
+        "numberOfFiles": 6,
+        "numberOfCodeFiles": 3,
+        "linesTotal": 1947,
+        "linesOfCode": 44,
+        "totalApiScanned": 43,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "5741f995-e40f-4d1e-871b-040f7d5a576f",
+          "ruleId": "NuGet.0005",
+          "projectPath": "DefaultAPITests\\DefaultAPITests.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "xunit, 2.4.1\n\nRecommendation:\n\nThis package will only be updated for security issues. All future feature work has moved onto v3.\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+              "protected": "xunit, 2.4.1\n\nRecommendation:\n\nThis package will only be updated for security issues. All future feature work has moved onto v3.\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3"
+            },
+            "kind": "File",
+            "path": "DefaultAPITests\\DefaultAPITests.csproj",
+            "snippet": "xunit, 2.4.1\n\nRecommendation:\n\nThis package will only be updated for security issues. All future feature work has moved onto v3.\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+            "protectedSnippet": "xunit, 2.4.1\n\nRecommendation:\n\nThis package will only be updated for security issues. All future feature work has moved onto v3.\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+            "label": "xunit 2.4.1",
+            "properties": {
+              "PackageId": "xunit",
+              "PackageVersion": "2.4.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "8fcc4252-481f-4c8e-971c-9f9505cd8136",
+          "ruleId": "Project.0002",
+          "projectPath": "DefaultAPITests\\DefaultAPITests.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "DefaultAPITests\\DefaultAPITests.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0004": {
+      "id": "NuGet.0004",
+      "isFeature": false,
+      "description": "NuGet package contains security vulnerabilities.\n\nPackage needs to be upgraded to a newer version that addresses known security vulnerabilities.",
+      "label": "NuGet package contains security vulnerability",
+      "severity": "Optional",
+      "effort": 1
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0005": {
+      "id": "NuGet.0005",
+      "isFeature": false,
+      "description": "NuGet package is deprecated.\n\nGo to its documentation and if there is a guidance for replacement of functionality provided by this package.",
+      "label": "NuGet package is deprecated",
+      "severity": "Optional",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262531",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}

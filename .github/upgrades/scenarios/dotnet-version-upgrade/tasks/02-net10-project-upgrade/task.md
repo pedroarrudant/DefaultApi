@@ -1,0 +1,5 @@
+# 02-net10-project-upgrade: Upgrade all projects, packages, and affected APIs
+
+Upgrade `Application\Application.csproj`, `DefaultAPI\DefaultAPI.csproj`, and `DefaultAPITests\DefaultAPITests.csproj` together from `net6.0` to `net10.0`. The assessment flags 9 binary-incompatible, 10 source-incompatible, and 2 behavioral API changes, along with package upgrade recommendations for `Microsoft.Extensions.Logging` and `Newtonsoft.Json`, a security-vulnerability finding in `Application` (the assessment does not identify its package or CVE), one incompatible `System.Data.SqlClient` reference with `Microsoft.Data.SqlClient` identified as its replacement, and deprecated xUnit. Research actual package usage and resolved vulnerabilities, update packages/tooling references as needed, and account for the flagged configuration binder, dependency-injection, SQL client, `TimeSpan`, and URI behavior changes.
+
+**Done when**: All three projects target `net10.0`; identified package, security, and API migration issues are resolved without deferred stubs; and the full solution builds without errors or warnings.
